@@ -1,6 +1,6 @@
 {
-  "name": "novel",
-  "private": true,
+  "name": "collhub-editor",
+  "private": false,
   "scripts": {
     "build": "turbo build",
     "dev": "turbo dev",

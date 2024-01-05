@@ -1,7 +1,7 @@
 {
-  "name": "novel",
-  "version": "0.1.22",
-  "description": "Notion-style WYSIWYG editor with AI-powered autocompletions",
+  "name": "collhub-editor",
+  "version": "0.1.2",
+  "description": "Novel text editor for CollHub",
   "license": "Apache-2.0",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
