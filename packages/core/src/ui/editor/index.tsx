@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
-import { useEditor, EditorContent, JSONContent } from '@tiptap/react';
+import { useEditor, EditorContent } from '@tiptap/react';
 import { defaultEditorProps } from './props';
 import { defaultExtensions } from './extensions';
 import useLocalStorage from '@/lib/hooks/use-local-storage';
@@ -13,9 +13,8 @@ import { defaultEditorContent } from './default-content';
 import { EditorBubbleMenu } from './bubble-menu';
 import { getPrevText } from '@/lib/editor';
 import { ImageResizer } from './extensions/image-resizer';
-import { EditorProps } from '@tiptap/pm/view';
-import { Editor as EditorClass, Extensions } from '@tiptap/core';
 import { NovelContext } from './provider';
+import { EditorProps } from './editor.types';
 
 export default function Editor({
   completionApi = '/api/generate',
@@ -28,60 +27,8 @@ export default function Editor({
   debounceDuration = 750,
   storageKey = 'novel__content',
   disableLocalStorage = false,
-}: {
-  /**
-   * The API route to use for the OpenAI completion API.
-   * Defaults to "/api/generate".
-   */
-  completionApi?: string;
-  /**
-   * Additional classes to add to the editor container.
-   * Defaults to "relative min-h-[500px] w-full max-w-screen-lg border-stone-200 bg-white sm:mb-[calc(20vh)] sm:rounded-lg sm:border sm:shadow-lg".
-   */
-  className?: string;
-  /**
-   * The default value to use for the editor.
-   * Defaults to defaultEditorContent.
-   */
-  defaultValue?: JSONContent | string;
-  /**
-   * A list of extensions to use for the editor, in addition to the default Novel extensions.
-   * Defaults to [].
-   */
-  extensions?: Extensions;
-  /**
-   * Props to pass to the underlying Tiptap editor, in addition to the default Novel editor props.
-   * Defaults to {}.
-   */
-  editorProps?: EditorProps;
-  /**
-   * A callback function that is called whenever the editor is updated.
-   * Defaults to () => {}.
-   */
-  // eslint-disable-next-line no-unused-vars
-  onUpdate?: (editor?: EditorClass) => void | Promise<void>;
-  /**
-   * A callback function that is called whenever the editor is updated, but only after the defined debounce duration.
-   * Defaults to () => {}.
-   */
-  // eslint-disable-next-line no-unused-vars
-  onDebouncedUpdate?: (editor?: EditorClass) => void | Promise<void>;
-  /**
-   * The duration (in milliseconds) to debounce the onDebouncedUpdate callback.
-   * Defaults to 750.
-   */
-  debounceDuration?: number;
-  /**
-   * The key to use for storing the editor's value in local storage.
-   * Defaults to "novel__content".
-   */
-  storageKey?: string;
-  /**
-   * Disable local storage read/save.
-   * Defaults to false.
-   */
-  disableLocalStorage?: boolean;
-}) {
+  editable = true,
+}: EditorProps) {
   const [content, setContent] = useLocalStorage(storageKey, defaultValue);
 
   const [hydrated, setHydrated] = useState(false);
@@ -101,6 +48,7 @@ export default function Editor({
       ...defaultEditorProps,
       ...editorProps,
     },
+    editable,
     onUpdate: (e) => {
       const selection = e.editor.state.selection;
       const lastTwo = getPrevText(e.editor, {
@@ -143,6 +91,10 @@ export default function Editor({
   });
 
   const prev = useRef('');
+
+  useEffect(() => {
+    editor?.setEditable(editable);
+  }, [editable, editor]);
 
   // Insert chunks of the generated text
   useEffect(() => {
