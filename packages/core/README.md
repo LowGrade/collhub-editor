@@ -46,7 +46,7 @@ npm i collhub
 Then, you can use it in your code like this:
 
 ```jsx
-import { Editor } from 'collhub';
+import { Editor } from 'collhub-editor';
 
 export default function App() {
   return <Editor />;

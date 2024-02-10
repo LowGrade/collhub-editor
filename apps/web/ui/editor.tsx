@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Editor as CollhubEditor } from "collhub";
+import { Editor as CollhubEditor } from "collhub-editor";
 
 export default function Editor() {
   const [saveStatus, setSaveStatus] = useState("Saved");
