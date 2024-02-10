@@ -9,14 +9,6 @@
 </p>
 
 <p align="center">
-  <a href="https://news.ycombinator.com/item?id=36360789"><img src="https://img.shields.io/badge/Hacker%20News-369-%23FF6600" alt="Hacker News"></a>
-  <a href="https://github.com/steven-tey/collhub/blob/main/LICENSE">
-    <img src="https://img.shields.io/github/license/steven-tey/collhub?label=license&logo=github&color=f80&logoColor=fff" alt="License" />
-  </a>
-  <a href="https://github.com/steven-tey/collhub"><img src="https://img.shields.io/github/stars/steven-tey/collhub?style=social" alt="Collhub.sh's GitHub repo"></a>
-</p>
-
-<p align="center">
   <a href="#introduction"><strong>Introduction</strong></a> ·
   <a href="#installation"><strong>Installation</strong></a> ·
   <a href="#deploy-your-own"><strong>Deploy Your Own</strong></a> ·
@@ -30,8 +22,6 @@
 ## Introduction
 
 Collhub is a Notion-style WYSIWYG editor with AI-powered autocompletions.
-
-https://github.com/steven-tey/collhub/assets/28986134/2099877f-4f2b-4b1c-8782-5d803d63be5c
 
 <br />
 
@@ -55,18 +45,18 @@ export default function App() {
 
 The `Editor` is a React component that takes in the following props:
 
-| Prop                  | Type                        | Description                                                                                                                                                                                    | Default                                                                                                                             |
-| --------------------- | --------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
-| `completionApi`       | `string`                    | The API route to use for the OpenAI completion API.                                                                                                                                            | `/api/generate`                                                                                                                     |
-| `className`           | `string`                    | Editor container classname.                                                                                                                                                                    | `"relative min-h-[500px] w-full max-w-screen-lg border-stone-200 bg-white sm:mb-[calc(20vh)] sm:rounded-lg sm:border sm:shadow-lg"` |
-| `defaultValue`        | `JSONContent` or `string`   | The default value to use for the editor.                                                                                                                                                       | [`defaultEditorContent`](https://github.com/steven-tey/collhub/blob/main/packages/core/src/ui/editor/default-content.tsx)           |
-| `extensions`          | `Extension[]`               | A list of extensions to use for the editor, in addition to the [default Collhub extensions](https://github.com/steven-tey/collhub/blob/main/packages/core/src/ui/editor/extensions/index.tsx). | `[]`                                                                                                                                |
-| `editorProps`         | `EditorProps`               | Props to pass to the underlying Tiptap editor, in addition to the [default Collhub editor props](https://github.com/steven-tey/collhub/blob/main/packages/core/src/ui/editor/props.ts).        | `{}`                                                                                                                                |
-| `onUpdate`            | `(editor?: Editor) => void` | A callback function that is called whenever the editor is updated.                                                                                                                             | `() => {}`                                                                                                                          |
-| `onDebouncedUpdate`   | `(editor?: Editor) => void` | A callback function that is called whenever the editor is updated, but only after the defined debounce duration.                                                                               | `() => {}`                                                                                                                          |
-| `debounceDuration`    | `number`                    | The duration (in milliseconds) to debounce the `onDebouncedUpdate` callback.                                                                                                                   | `750`                                                                                                                               |
-| `storageKey`          | `string`                    | The key to use for storing the editor's value in local storage.                                                                                                                                | `collhub__content`                                                                                                                  |
-| `disableLocalStorage` | `boolean`                   | Enabling this option will prevent read/write content from/to local storage.                                                                                                                    | `false`                                                                                                                             |
+| Prop                  | Type                        | Description                                                                                                      | Default                                                                                                                             |
+| --------------------- | --------------------------- | ---------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
+| `completionApi`       | `string`                    | The API route to use for the OpenAI completion API.                                                              | `/api/generate`                                                                                                                     |
+| `className`           | `string`                    | Editor container classname.                                                                                      | `"relative min-h-[500px] w-full max-w-screen-lg border-stone-200 bg-white sm:mb-[calc(20vh)] sm:rounded-lg sm:border sm:shadow-lg"` |
+| `defaultValue`        | `JSONContent` or `string`   | The default value to use for the editor.                                                                         | ""                                                                                                                                  |
+| `extensions`          | `Extension[]`               | A list of extensions to use for the editor                                                                       | `[]`                                                                                                                                |
+| `editorProps`         | `EditorProps`               | Props to pass to the underlying Tiptap editor.                                                                   | `{}`                                                                                                                                |
+| `onUpdate`            | `(editor?: Editor) => void` | A callback function that is called whenever the editor is updated.                                               | `() => {}`                                                                                                                          |
+| `onDebouncedUpdate`   | `(editor?: Editor) => void` | A callback function that is called whenever the editor is updated, but only after the defined debounce duration. | `() => {}`                                                                                                                          |
+| `debounceDuration`    | `number`                    | The duration (in milliseconds) to debounce the `onDebouncedUpdate` callback.                                     | `750`                                                                                                                               |
+| `storageKey`          | `string`                    | The key to use for storing the editor's value in local storage.                                                  | `collhub__content`                                                                                                                  |
+| `disableLocalStorage` | `boolean`                   | Enabling this option will prevent read/write content from/to local storage.                                      | `false`                                                                                                                             |
 
 ## Setting Up Locally
 
