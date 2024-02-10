@@ -9,7 +9,6 @@ import { useDebouncedCallback } from 'use-debounce';
 import { useCompletion } from 'ai/react';
 import { toast } from 'sonner';
 import va from '@vercel/analytics';
-import { defaultEditorContent } from './default-content';
 import { EditorBubbleMenu } from './bubble-menu';
 import { getPrevText } from '@/lib/editor';
 import { ImageResizer } from './extensions/image-resizer';
@@ -19,7 +18,7 @@ import { EditorProps } from './editor.types';
 export default function Editor({
   completionApi = '/api/generate',
   className = 'novel-relative novel-min-h-[500px] novel-w-full novel-max-w-screen-lg novel-border-stone-200 novel-bg-white sm:novel-mb-[calc(20vh)] sm:novel-rounded-lg sm:novel-border sm:novel-shadow-lg',
-  defaultValue = defaultEditorContent,
+  defaultValue = '',
   extensions = [],
   editorProps = {},
   onUpdate = () => {},
@@ -151,6 +150,19 @@ export default function Editor({
       setHydrated(true);
     }
   }, [editor, defaultValue, content, hydrated, disableLocalStorage]);
+
+  useEffect(() => {
+    if (
+      editor &&
+      defaultValue &&
+      ((typeof defaultValue === 'string' &&
+        editor?.getHTML() !== defaultValue) ||
+        (typeof defaultValue === 'object' &&
+          editor?.getJSON() !== defaultValue))
+    ) {
+      editor?.commands.setContent(defaultValue);
+    }
+  }, [defaultValue, editor]);
 
   return (
     <NovelContext.Provider
