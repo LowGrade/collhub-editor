@@ -1,4 +1,4 @@
-<a href="https://collhub.sh">
+<a href="https://novel.sh">
   <img alt="Collhub is a Notion-style WYSIWYG editor with AI-powered autocompletions." src="https://novel.sh/opengraph-image.png">
   <h1 align="center">Collhub</h1>
   <h4 align="center">Using Novel text editor all rights reserved!</h4>
@@ -29,7 +29,7 @@
 
 ## Introduction
 
-[Collhub](https://collhub.sh/) is a Notion-style WYSIWYG editor with AI-powered autocompletions.
+Collhub is a Notion-style WYSIWYG editor with AI-powered autocompletions.
 
 https://github.com/steven-tey/collhub/assets/28986134/2099877f-4f2b-4b1c-8782-5d803d63be5c
 
@@ -37,10 +37,10 @@ https://github.com/steven-tey/collhub/assets/28986134/2099877f-4f2b-4b1c-8782-5d
 
 ## Installation
 
-To use Collhub in a project, you can run the following command to install the `collhub` [NPM package](https://www.npmjs.com/package/collhub):
+To use Collhub in a project, you can run the following command to install the `collhub` [NPM package](https://www.npmjs.com/package/collhub-editor):
 
 ```
-npm i collhub
+npm i collhub-editor
 ```
 
 Then, you can use it in your code like this:
