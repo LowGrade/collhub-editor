@@ -1,9 +1,9 @@
-"use client";
+'use client';
 
-import { createContext } from "react";
+import { createContext } from 'react';
 
-export const NovelContext = createContext<{
+export const CollhubContext = createContext<{
   completionApi: string;
 }>({
-  completionApi: "/api/generate",
+  completionApi: '/api/generate',
 });

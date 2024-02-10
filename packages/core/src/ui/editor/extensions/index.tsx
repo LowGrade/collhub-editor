@@ -21,35 +21,36 @@ export const defaultExtensions = [
   StarterKit.configure({
     bulletList: {
       HTMLAttributes: {
-        class: 'novel-list-disc novel-list-outside novel-leading-3 novel--mt-2',
+        class:
+          'collhub-list-disc collhub-list-outside collhub-leading-3 collhub--mt-2',
       },
     },
     orderedList: {
       HTMLAttributes: {
         class:
-          'novel-list-decimal novel-list-outside novel-leading-3 novel--mt-2',
+          'collhub-list-decimal collhub-list-outside collhub-leading-3 collhub--mt-2',
       },
     },
     listItem: {
       HTMLAttributes: {
-        class: 'novel-leading-normal novel--mb-2',
+        class: 'collhub-leading-normal collhub--mb-2',
       },
     },
     blockquote: {
       HTMLAttributes: {
-        class: 'novel-border-l-4 novel-border-stone-700',
+        class: 'collhub-border-l-4 collhub-border-stone-700',
       },
     },
     codeBlock: {
       HTMLAttributes: {
         class:
-          'novel-rounded-sm novel-bg-stone-100 novel-p-5 novel-font-mono novel-font-medium novel-text-stone-800',
+          'collhub-rounded-sm collhub-bg-stone-100 collhub-p-5 collhub-font-mono collhub-font-medium collhub-text-stone-800',
       },
     },
     code: {
       HTMLAttributes: {
         class:
-          'novel-rounded-md novel-bg-stone-200 novel-px-1.5 novel-py-1 novel-font-mono novel-font-medium novel-text-stone-900',
+          'collhub-rounded-md collhub-bg-stone-200 collhub-px-1.5 collhub-py-1 collhub-font-mono collhub-font-medium collhub-text-stone-900',
         spellcheck: 'false',
       },
     },
@@ -83,13 +84,14 @@ export const defaultExtensions = [
     },
   }).configure({
     HTMLAttributes: {
-      class: 'novel-mt-4 novel-mb-6 novel-border-t novel-border-stone-300',
+      class:
+        'collhub-mt-4 collhub-mb-6 collhub-border-t collhub-border-stone-300',
     },
   }),
   TiptapLink.configure({
     HTMLAttributes: {
       class:
-        'novel-text-stone-400 novel-underline novel-underline-offset-[3px] hover:novel-text-stone-600 novel-transition-colors novel-cursor-pointer',
+        'collhub-text-stone-400 collhub-underline collhub-underline-offset-[3px] hover:collhub-text-stone-600 collhub-transition-colors collhub-cursor-pointer',
     },
   }),
   TiptapImage.extend({
@@ -99,12 +101,12 @@ export const defaultExtensions = [
   }).configure({
     allowBase64: true,
     HTMLAttributes: {
-      class: 'novel-rounded-lg novel-border novel-border-stone-200',
+      class: 'collhub-rounded-lg collhub-border collhub-border-stone-200',
     },
   }),
   UpdatedImage.configure({
     HTMLAttributes: {
-      class: 'novel-rounded-lg novel-border novel-border-stone-200',
+      class: 'collhub-rounded-lg collhub-border collhub-border-stone-200',
     },
   }),
   Placeholder.configure({
@@ -125,12 +127,12 @@ export const defaultExtensions = [
   }),
   TaskList.configure({
     HTMLAttributes: {
-      class: 'novel-not-prose novel-pl-2',
+      class: 'collhub-not-prose collhub-pl-2',
     },
   }),
   TaskItem.configure({
     HTMLAttributes: {
-      class: 'novel-flex novel-items-start novel-my-4',
+      class: 'collhub-flex collhub-items-start collhub-my-4',
     },
     nested: true,
   }),

@@ -1,7 +1,7 @@
-import { Editor } from "@tiptap/core";
-import { Check, ChevronDown } from "lucide-react";
-import { Dispatch, FC, SetStateAction } from "react";
-import * as Popover from "@radix-ui/react-popover";
+import { Editor } from '@tiptap/core';
+import { Check, ChevronDown } from 'lucide-react';
+import { Dispatch, FC, SetStateAction } from 'react';
+import * as Popover from '@radix-ui/react-popover';
 
 export interface BubbleColorMenuItem {
   name: string;
@@ -16,79 +16,79 @@ interface ColorSelectorProps {
 
 const TEXT_COLORS: BubbleColorMenuItem[] = [
   {
-    name: "Default",
-    color: "var(--novel-black)",
+    name: 'Default',
+    color: 'var(--collhub-black)',
   },
   {
-    name: "Purple",
-    color: "#9333EA",
+    name: 'Purple',
+    color: '#9333EA',
   },
   {
-    name: "Red",
-    color: "#E00000",
+    name: 'Red',
+    color: '#E00000',
   },
   {
-    name: "Yellow",
-    color: "#EAB308",
+    name: 'Yellow',
+    color: '#EAB308',
   },
   {
-    name: "Blue",
-    color: "#2563EB",
+    name: 'Blue',
+    color: '#2563EB',
   },
   {
-    name: "Green",
-    color: "#008A00",
+    name: 'Green',
+    color: '#008A00',
   },
   {
-    name: "Orange",
-    color: "#FFA500",
+    name: 'Orange',
+    color: '#FFA500',
   },
   {
-    name: "Pink",
-    color: "#BA4081",
+    name: 'Pink',
+    color: '#BA4081',
   },
   {
-    name: "Gray",
-    color: "#A8A29E",
+    name: 'Gray',
+    color: '#A8A29E',
   },
 ];
 
 const HIGHLIGHT_COLORS: BubbleColorMenuItem[] = [
   {
-    name: "Default",
-    color: "var(--novel-highlight-default)",
+    name: 'Default',
+    color: 'var(--collhub-highlight-default)',
   },
   {
-    name: "Purple",
-    color: "var(--novel-highlight-purple)",
+    name: 'Purple',
+    color: 'var(--collhub-highlight-purple)',
   },
   {
-    name: "Red",
-    color: "var(--novel-highlight-red)",
+    name: 'Red',
+    color: 'var(--collhub-highlight-red)',
   },
   {
-    name: "Yellow",
-    color: "var(--novel-highlight-yellow)",
+    name: 'Yellow',
+    color: 'var(--collhub-highlight-yellow)',
   },
   {
-    name: "Blue",
-    color: "var(--novel-highlight-blue)",
+    name: 'Blue',
+    color: 'var(--collhub-highlight-blue)',
   },
   {
-    name: "Green",
-    color: "var(--novel-highlight-green)",
+    name: 'Green',
+    color: 'var(--collhub-highlight-green)',
   },
   {
-    name: "Orange",
-    color: "var(--novel-highlight-orange)",
+    name: 'Orange',
+    color: 'var(--collhub-highlight-orange)',
   },
   {
-    name: "Pink",
-    color: "var(--novel-highlight-pink)",
+    name: 'Pink',
+    color: 'var(--collhub-highlight-pink)',
   },
   {
-    name: "Gray",
-    color: "var(--novel-highlight-gray)",
+    name: 'Gray',
+    color: 'var(--collhub-highlight-gray)',
   },
 ];
 
@@ -98,22 +98,22 @@ export const ColorSelector: FC<ColorSelectorProps> = ({
   setIsOpen,
 }) => {
   const activeColorItem = TEXT_COLORS.find(({ color }) =>
-    editor.isActive("textStyle", { color })
+    editor.isActive('textStyle', { color })
   );
 
   const activeHighlightItem = HIGHLIGHT_COLORS.find(({ color }) =>
-    editor.isActive("highlight", { color })
+    editor.isActive('highlight', { color })
   );
 
   return (
     <Popover.Root open={isOpen}>
-      <div className="novel-relative novel-h-full">
+      <div className='collhub-relative collhub-h-full'>
         <Popover.Trigger
-          className="novel-flex novel-h-full novel-items-center novel-gap-1 novel-p-2 novel-text-sm novel-font-medium novel-text-stone-600 hover:novel-bg-stone-100 active:novel-bg-stone-200"
+          className='collhub-flex collhub-h-full collhub-items-center collhub-gap-1 collhub-p-2 collhub-text-sm collhub-font-medium collhub-text-stone-600 hover:collhub-bg-stone-100 active:collhub-bg-stone-200'
           onClick={() => setIsOpen(!isOpen)}
         >
           <span
-            className="novel-rounded-sm novel-px-1"
+            className='collhub-rounded-sm collhub-px-1'
             style={{
               color: activeColorItem?.color,
               backgroundColor: activeHighlightItem?.color,
@@ -122,14 +122,14 @@ export const ColorSelector: FC<ColorSelectorProps> = ({
             A
           </span>
 
-          <ChevronDown className="novel-h-4 novel-w-4" />
+          <ChevronDown className='collhub-h-4 collhub-w-4' />
         </Popover.Trigger>
 
         <Popover.Content
-          align="start"
-          className="novel-z-[99999] novel-my-1 novel-flex novel-max-h-80 novel-w-48 novel-flex-col novel-overflow-hidden novel-overflow-y-auto novel-rounded novel-border novel-border-stone-200 novel-bg-white novel-p-1 novel-shadow-xl novel-animate-in novel-fade-in novel-slide-in-from-top-1"
+          align='start'
+          className='collhub-z-[99999] collhub-my-1 collhub-flex collhub-max-h-80 collhub-w-48 collhub-flex-col collhub-overflow-hidden collhub-overflow-y-auto collhub-rounded collhub-border collhub-border-stone-200 collhub-bg-white collhub-p-1 collhub-shadow-xl collhub-animate-in collhub-fade-in collhub-slide-in-from-top-1'
         >
-          <div className="novel-my-1 novel-px-2 novel-text-sm novel-text-stone-500">
+          <div className='collhub-my-1 collhub-px-2 collhub-text-sm collhub-text-stone-500'>
             Color
           </div>
           {TEXT_COLORS.map(({ name, color }, index) => (
@@ -137,33 +137,33 @@ export const ColorSelector: FC<ColorSelectorProps> = ({
               key={index}
               onClick={() => {
                 editor.commands.unsetColor();
-                name !== "Default" &&
+                name !== 'Default' &&
                   editor
                     .chain()
                     .focus()
-                    .setColor(color || "")
+                    .setColor(color || '')
                     .run();
                 setIsOpen(false);
               }}
-              className="novel-flex novel-items-center novel-justify-between novel-rounded-sm novel-px-2 novel-py-1 novel-text-sm novel-text-stone-600 hover:novel-bg-stone-100"
-              type="button"
+              className='collhub-flex collhub-items-center collhub-justify-between collhub-rounded-sm collhub-px-2 collhub-py-1 collhub-text-sm collhub-text-stone-600 hover:collhub-bg-stone-100'
+              type='button'
             >
-              <div className="novel-flex novel-items-center novel-space-x-2">
+              <div className='collhub-flex collhub-items-center collhub-space-x-2'>
                 <div
-                  className="novel-rounded-sm novel-border novel-border-stone-200 novel-px-1 novel-py-px novel-font-medium"
+                  className='collhub-rounded-sm collhub-border collhub-border-stone-200 collhub-px-1 collhub-py-px collhub-font-medium'
                   style={{ color }}
                 >
                   A
                 </div>
                 <span>{name}</span>
               </div>
-              {editor.isActive("textStyle", { color }) && (
-                <Check className="novel-h-4 novel-w-4" />
+              {editor.isActive('textStyle', { color }) && (
+                <Check className='collhub-h-4 collhub-w-4' />
               )}
             </button>
           ))}
 
-          <div className="novel-mb-1 novel-mt-2 novel-px-2 novel-text-sm novel-text-stone-500">
+          <div className='collhub-mb-1 collhub-mt-2 collhub-px-2 collhub-text-sm collhub-text-stone-500'>
             Background
           </div>
 
@@ -172,23 +172,23 @@ export const ColorSelector: FC<ColorSelectorProps> = ({
               key={index}
               onClick={() => {
                 editor.commands.unsetHighlight();
-                name !== "Default" && editor.commands.setHighlight({ color });
+                name !== 'Default' && editor.commands.setHighlight({ color });
                 setIsOpen(false);
               }}
-              className="novel-flex novel-items-center novel-justify-between novel-rounded-sm novel-px-2 novel-py-1 novel-text-sm novel-text-stone-600 hover:novel-bg-stone-100"
-              type="button"
+              className='collhub-flex collhub-items-center collhub-justify-between collhub-rounded-sm collhub-px-2 collhub-py-1 collhub-text-sm collhub-text-stone-600 hover:collhub-bg-stone-100'
+              type='button'
             >
-              <div className="novel-flex novel-items-center novel-space-x-2">
+              <div className='collhub-flex collhub-items-center collhub-space-x-2'>
                 <div
-                  className="novel-rounded-sm novel-border novel-border-stone-200 novel-px-1 novel-py-px novel-font-medium"
+                  className='collhub-rounded-sm collhub-border collhub-border-stone-200 collhub-px-1 collhub-py-px collhub-font-medium'
                   style={{ backgroundColor: color }}
                 >
                   A
                 </div>
                 <span>{name}</span>
               </div>
-              {editor.isActive("highlight", { color }) && (
-                <Check className="novel-h-4 novel-w-4" />
+              {editor.isActive('highlight', { color }) && (
+                <Check className='collhub-h-4 collhub-w-4' />
               )}
             </button>
           ))}

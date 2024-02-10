@@ -1,53 +1,53 @@
 :root {
-  --novel-black: rgb(0 0 0);
-  --novel-white: rgb(255 255 255);
-  --novel-stone-50: rgb(250 250 249);
-  --novel-stone-100: rgb(245 245 244);
-  --novel-stone-200: rgb(231 229 228);
-  --novel-stone-300: rgb(214 211 209);
-  --novel-stone-400: rgb(168 162 158);
-  --novel-stone-500: rgb(120 113 108);
-  --novel-stone-600: rgb(87 83 78);
-  --novel-stone-700: rgb(68 64 60);
-  --novel-stone-800: rgb(41 37 36);
-  --novel-stone-900: rgb(28 25 23);
+  --collhub-black: rgb(0 0 0);
+  --collhub-white: rgb(255 255 255);
+  --collhub-stone-50: rgb(250 250 249);
+  --collhub-stone-100: rgb(245 245 244);
+  --collhub-stone-200: rgb(231 229 228);
+  --collhub-stone-300: rgb(214 211 209);
+  --collhub-stone-400: rgb(168 162 158);
+  --collhub-stone-500: rgb(120 113 108);
+  --collhub-stone-600: rgb(87 83 78);
+  --collhub-stone-700: rgb(68 64 60);
+  --collhub-stone-800: rgb(41 37 36);
+  --collhub-stone-900: rgb(28 25 23);
 
-  --novel-highlight-default: #ffffff;
-  --novel-highlight-purple: #f6f3f8;
-  --novel-highlight-red: #fdebeb;
-  --novel-highlight-yellow: #fbf4a2;
-  --novel-highlight-blue: #c1ecf9;
-  --novel-highlight-green: #acf79f;
-  --novel-highlight-orange: #faebdd;
-  --novel-highlight-pink: #faf1f5;
-  --novel-highlight-gray: #f1f1ef;
+  --collhub-highlight-default: #ffffff;
+  --collhub-highlight-purple: #f6f3f8;
+  --collhub-highlight-red: #fdebeb;
+  --collhub-highlight-yellow: #fbf4a2;
+  --collhub-highlight-blue: #c1ecf9;
+  --collhub-highlight-green: #acf79f;
+  --collhub-highlight-orange: #faebdd;
+  --collhub-highlight-pink: #faf1f5;
+  --collhub-highlight-gray: #f1f1ef;
 
   --font-title: 'Cal Sans', sans-serif;
 }
 
 .dark-theme {
-  --novel-black: rgb(255 255 255);
-  --novel-white: rgb(25 25 25);
-  --novel-stone-50: rgb(35 35 34);
-  --novel-stone-100: rgb(41 37 36);
-  --novel-stone-200: rgb(66 69 71);
-  --novel-stone-300: rgb(112 118 123);
-  --novel-stone-400: rgb(160 167 173);
-  --novel-stone-500: rgb(193 199 204);
-  --novel-stone-600: rgb(212 217 221);
-  --novel-stone-700: rgb(229 232 235);
-  --novel-stone-800: rgb(232 234 235);
-  --novel-stone-900: rgb(240, 240, 241);
+  --collhub-black: rgb(255 255 255);
+  --collhub-white: rgb(25 25 25);
+  --collhub-stone-50: rgb(35 35 34);
+  --collhub-stone-100: rgb(41 37 36);
+  --collhub-stone-200: rgb(66 69 71);
+  --collhub-stone-300: rgb(112 118 123);
+  --collhub-stone-400: rgb(160 167 173);
+  --collhub-stone-500: rgb(193 199 204);
+  --collhub-stone-600: rgb(212 217 221);
+  --collhub-stone-700: rgb(229 232 235);
+  --collhub-stone-800: rgb(232 234 235);
+  --collhub-stone-900: rgb(240, 240, 241);
 
-  --novel-highlight-default: #000000;
-  --novel-highlight-purple: #3f2c4b;
-  --novel-highlight-red: #5c1a1a;
-  --novel-highlight-yellow: #5c4b1a;
-  --novel-highlight-blue: #1a3d5c;
-  --novel-highlight-green: #1a5c20;
-  --novel-highlight-orange: #5c3a1a;
-  --novel-highlight-pink: #5c1a3a;
-  --novel-highlight-gray: #3a3a3a;
+  --collhub-highlight-default: #000000;
+  --collhub-highlight-purple: #3f2c4b;
+  --collhub-highlight-red: #5c1a1a;
+  --collhub-highlight-yellow: #5c4b1a;
+  --collhub-highlight-blue: #1a3d5c;
+  --collhub-highlight-green: #1a5c20;
+  --collhub-highlight-orange: #5c3a1a;
+  --collhub-highlight-pink: #5c1a3a;
+  --collhub-highlight-gray: #3a3a3a;
 }
 
 @font-face {

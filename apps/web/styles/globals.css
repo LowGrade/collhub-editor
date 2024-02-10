@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-  background-color: var(--novel-white);
+  background-color: var(--collhub-white);
 }
 
 @layer base {

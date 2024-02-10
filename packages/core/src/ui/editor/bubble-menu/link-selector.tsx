@@ -1,7 +1,7 @@
-import { cn, getUrlFromString } from "@/lib/utils";
-import { Editor } from "@tiptap/core";
-import { Check, Trash } from "lucide-react";
-import { Dispatch, FC, SetStateAction, useEffect, useRef } from "react";
+import { cn, getUrlFromString } from '@/lib/utils';
+import { Editor } from '@tiptap/core';
+import { Check, Trash } from 'lucide-react';
+import { Dispatch, FC, SetStateAction, useEffect, useRef } from 'react';
 
 interface LinkSelectorProps {
   editor: Editor;
@@ -22,20 +22,20 @@ export const LinkSelector: FC<LinkSelectorProps> = ({
   });
 
   return (
-    <div className="novel-relative">
+    <div className='collhub-relative'>
       <button
-        type="button"
-        className="novel-flex novel-h-full novel-items-center novel-space-x-2 novel-px-3 novel-py-1.5 novel-text-sm novel-font-medium novel-text-stone-600 hover:novel-bg-stone-100 active:novel-bg-stone-200"
+        type='button'
+        className='collhub-flex collhub-h-full collhub-items-center collhub-space-x-2 collhub-px-3 collhub-py-1.5 collhub-text-sm collhub-font-medium collhub-text-stone-600 hover:collhub-bg-stone-100 active:collhub-bg-stone-200'
         onClick={() => {
           setIsOpen(!isOpen);
         }}
       >
-        <p className="novel-text-base">↗</p>
+        <p className='collhub-text-base'>↗</p>
         <p
           className={cn(
-            "novel-underline novel-decoration-stone-400 novel-underline-offset-4",
+            'collhub-underline collhub-decoration-stone-400 collhub-underline-offset-4',
             {
-              "novel-text-blue-500": editor.isActive("link"),
+              'collhub-text-blue-500': editor.isActive('link'),
             }
           )}
         >
@@ -51,29 +51,29 @@ export const LinkSelector: FC<LinkSelectorProps> = ({
             url && editor.chain().focus().setLink({ href: url }).run();
             setIsOpen(false);
           }}
-          className="novel-fixed novel-top-full novel-z-[99999] novel-mt-1 novel-flex novel-w-60 novel-overflow-hidden novel-rounded novel-border novel-border-stone-200 novel-bg-white novel-p-1 novel-shadow-xl novel-animate-in novel-fade-in novel-slide-in-from-top-1"
+          className='collhub-fixed collhub-top-full collhub-z-[99999] collhub-mt-1 collhub-flex collhub-w-60 collhub-overflow-hidden collhub-rounded collhub-border collhub-border-stone-200 collhub-bg-white collhub-p-1 collhub-shadow-xl collhub-animate-in collhub-fade-in collhub-slide-in-from-top-1'
         >
           <input
             ref={inputRef}
-            type="text"
-            placeholder="Paste a link"
-            className="novel-flex-1 novel-bg-white novel-p-1 novel-text-sm novel-outline-none"
-            defaultValue={editor.getAttributes("link").href || ""}
+            type='text'
+            placeholder='Paste a link'
+            className='collhub-flex-1 collhub-bg-white collhub-p-1 collhub-text-sm collhub-outline-none'
+            defaultValue={editor.getAttributes('link').href || ''}
           />
-          {editor.getAttributes("link").href ? (
+          {editor.getAttributes('link').href ? (
             <button
-              type="button"
-              className="novel-flex novel-items-center novel-rounded-sm novel-p-1 novel-text-red-600 novel-transition-all hover:novel-bg-red-100 dark:hover:novel-bg-red-800"
+              type='button'
+              className='collhub-flex collhub-items-center collhub-rounded-sm collhub-p-1 collhub-text-red-600 collhub-transition-all hover:collhub-bg-red-100 dark:hover:collhub-bg-red-800'
               onClick={() => {
                 editor.chain().focus().unsetLink().run();
                 setIsOpen(false);
               }}
             >
-              <Trash className="novel-h-4 novel-w-4" />
+              <Trash className='collhub-h-4 collhub-w-4' />
             </button>
           ) : (
-            <button className="novel-flex novel-items-center novel-rounded-sm novel-p-1 novel-text-stone-600 novel-transition-all hover:novel-bg-stone-100">
-              <Check className="novel-h-4 novel-w-4" />
+            <button className='collhub-flex collhub-items-center collhub-rounded-sm collhub-p-1 collhub-text-stone-600 collhub-transition-all hover:collhub-bg-stone-100'>
+              <Check className='collhub-h-4 collhub-w-4' />
             </button>
           )}
         </form>

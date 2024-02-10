@@ -12,19 +12,19 @@ import va from '@vercel/analytics';
 import { EditorBubbleMenu } from './bubble-menu';
 import { getPrevText } from '@/lib/editor';
 import { ImageResizer } from './extensions/image-resizer';
-import { NovelContext } from './provider';
+import { CollhubContext } from './provider';
 import { EditorProps } from './editor.types';
 
 export default function Editor({
   completionApi = '/api/generate',
-  className = 'novel-relative novel-min-h-[500px] novel-w-full novel-max-w-screen-lg novel-border-stone-200 novel-bg-white sm:novel-mb-[calc(20vh)] sm:novel-rounded-lg sm:novel-border sm:novel-shadow-lg',
+  className = 'collhub-relative collhub-min-h-[500px] collhub-w-full collhub-max-w-screen-lg collhub-border-stone-200 collhub-bg-white sm:collhub-mb-[calc(20vh)] sm:collhub-rounded-lg sm:collhub-border sm:collhub-shadow-lg',
   defaultValue = '',
   extensions = [],
   editorProps = {},
   onUpdate = () => {},
   onDebouncedUpdate = () => {},
   debounceDuration = 750,
-  storageKey = 'novel__content',
+  storageKey = 'collhub__content',
   disableLocalStorage = false,
   editable = true,
 }: EditorProps) {
@@ -73,7 +73,7 @@ export default function Editor({
   });
 
   const { complete, completion, isLoading, stop } = useCompletion({
-    id: 'novel',
+    id: 'collhub',
     api: completionApi,
     onFinish: (_prompt, completion) => {
       editor?.commands.setTextSelection({
@@ -165,7 +165,7 @@ export default function Editor({
   }, [defaultValue, editor]);
 
   return (
-    <NovelContext.Provider
+    <CollhubContext.Provider
       value={{
         completionApi,
       }}
@@ -180,6 +180,6 @@ export default function Editor({
         {editor?.isActive('image') && <ImageResizer editor={editor} />}
         <EditorContent editor={editor} />
       </div>
-    </NovelContext.Provider>
+    </CollhubContext.Provider>
   );
 }

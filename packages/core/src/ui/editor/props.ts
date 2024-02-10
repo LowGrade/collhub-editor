@@ -1,15 +1,15 @@
-import { EditorProps } from "@tiptap/pm/view";
-import { startImageUpload } from "@/ui/editor/plugins/upload-images";
+import { EditorProps } from '@tiptap/pm/view';
+import { startImageUpload } from '@/ui/editor/plugins/upload-images';
 
 export const defaultEditorProps: EditorProps = {
   attributes: {
-    class: `novel-prose-lg novel-prose-stone dark:novel-prose-invert prose-headings:novel-font-title novel-font-default focus:novel-outline-none novel-max-w-full`,
+    class: `collhub-prose-lg collhub-prose-stone dark:collhub-prose-invert prose-headings:collhub-font-title collhub-font-default focus:collhub-outline-none collhub-max-w-full`,
   },
   handleDOMEvents: {
     keydown: (_view, event) => {
       // prevent default event listeners from firing when slash command is active
-      if (["ArrowUp", "ArrowDown", "Enter"].includes(event.key)) {
-        const slashCommand = document.querySelector("#slash-command");
+      if (['ArrowUp', 'ArrowDown', 'Enter'].includes(event.key)) {
+        const slashCommand = document.querySelector('#slash-command');
         if (slashCommand) {
           return true;
         }

@@ -1,18 +1,18 @@
 .ProseMirror {
-  @apply novel-p-12 novel-px-8 sm:novel-px-12;
+  @apply collhub-p-12 collhub-px-8 sm:collhub-px-12;
 }
 
 .ProseMirror .is-editor-empty:first-child::before {
   content: attr(data-placeholder);
   float: left;
-  color: var(--novel-stone-400);
+  color: var(--collhub-stone-400);
   pointer-events: none;
   height: 0;
 }
 .ProseMirror .is-empty::before {
   content: attr(data-placeholder);
   float: left;
-  color: var(--novel-stone-400);
+  color: var(--collhub-stone-400);
   pointer-events: none;
   height: 0;
 }
@@ -37,7 +37,7 @@
   position: relative;
 
   &:before {
-    content: "";
+    content: '';
     box-sizing: border-box;
     position: absolute;
     top: 50%;
@@ -45,8 +45,8 @@
     width: 36px;
     height: 36px;
     border-radius: 50%;
-    border: 3px solid var(--novel-stone-200);
-    border-top-color: var(--novel-stone-800);
+    border: 3px solid var(--collhub-stone-200);
+    border-top-color: var(--collhub-stone-800);
     animation: spinning 0.6s linear infinite;
   }
 }
@@ -59,42 +59,42 @@
 
 /* Custom TODO list checkboxes – shoutout to this awesome tutorial: https://moderncss.dev/pure-css-custom-checkbox-style/ */
 
-ul[data-type="taskList"] li > label {
+ul[data-type='taskList'] li > label {
   margin-right: 0.2rem;
   user-select: none;
 }
 
 @media screen and (max-width: 768px) {
-  ul[data-type="taskList"] li > label {
+  ul[data-type='taskList'] li > label {
     margin-right: 0.5rem;
   }
 }
 
-ul[data-type="taskList"] li > label input[type="checkbox"] {
+ul[data-type='taskList'] li > label input[type='checkbox'] {
   -webkit-appearance: none;
   appearance: none;
-  background-color: var(--novel-white);
+  background-color: var(--collhub-white);
   margin: 0;
   cursor: pointer;
   width: 1.2em;
   height: 1.2em;
   position: relative;
   top: 5px;
-  border: 2px solid var(--novel-stone-900);
+  border: 2px solid var(--collhub-stone-900);
   margin-right: 0.3rem;
   display: grid;
   place-content: center;
 
   &:hover {
-    background-color: var(--novel-stone-50);
+    background-color: var(--collhub-stone-50);
   }
 
   &:active {
-    background-color: var(--novel-stone-200);
+    background-color: var(--collhub-stone-200);
   }
 
   &::before {
-    content: "";
+    content: '';
     width: 0.65em;
     height: 0.65em;
     transform: scale(0);
@@ -109,8 +109,8 @@ ul[data-type="taskList"] li > label input[type="checkbox"] {
   }
 }
 
-ul[data-type="taskList"] li[data-checked="true"] > div > p {
-  color: var(--novel-stone-400);
+ul[data-type='taskList'] li[data-checked='true'] > div > p {
+  color: var(--collhub-stone-400);
   text-decoration: line-through;
   text-decoration-thickness: 2px;
 }
@@ -124,7 +124,7 @@ ul[data-type="taskList"] li[data-checked="true"] > div > p {
 .ProseMirror:not(.dragging) .ProseMirror-selectednode {
   outline: none !important;
   border-radius: 0.2rem;
-  background-color: var(--novel-highlight-blue);
+  background-color: var(--collhub-highlight-blue);
   transition: background-color 0.2s;
   box-shadow: none;
 }
@@ -145,12 +145,12 @@ ul[data-type="taskList"] li[data-checked="true"] > div > p {
   cursor: grab;
 
   &:hover {
-    background-color: var(--novel-stone-100);
+    background-color: var(--collhub-stone-100);
     transition: background-color 0.2s;
   }
 
   &:active {
-    background-color: var(--novel-stone-200);
+    background-color: var(--collhub-stone-200);
     transition: background-color 0.2s;
   }
 

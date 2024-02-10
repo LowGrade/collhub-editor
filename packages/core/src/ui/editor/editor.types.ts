@@ -18,12 +18,12 @@ export interface EditorProps {
    */
   defaultValue?: JSONContent | string;
   /**
-   * A list of extensions to use for the editor, in addition to the default Novel extensions.
+   * A list of extensions to use for the editor, in addition to the default Collhub extensions.
    * Defaults to [].
    */
   extensions?: Extensions;
   /**
-   * Props to pass to the underlying Tiptap editor, in addition to the default Novel editor props.
+   * Props to pass to the underlying Tiptap editor, in addition to the default Collhub editor props.
    * Defaults to {}.
    */
   editorProps?: TipTapEditorProps;
@@ -46,7 +46,7 @@ export interface EditorProps {
   debounceDuration?: number;
   /**
    * The key to use for storing the editor's value in local storage.
-   * Defaults to "novel__content".
+   * Defaults to "collhub__content".
    */
   storageKey?: string;
   /**
