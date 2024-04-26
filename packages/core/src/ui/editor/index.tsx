@@ -32,9 +32,10 @@ export default function Editor({
 
   const [hydrated, setHydrated] = useState(false);
 
-  const debouncedUpdates = useDebouncedCallback(async ({ editor }) => {
+  const debouncedUpdates = useDebouncedCallback(async (e) => {
+    const { editor } = e;
     const json = editor.getJSON();
-    onDebouncedUpdate(editor);
+    onDebouncedUpdate(e);
 
     if (!disableLocalStorage) {
       setContent(json);
@@ -66,7 +67,7 @@ export default function Editor({
         // complete(e.editor.storage.markdown.getMarkdown());
         va.track('Autocomplete Shortcut Used');
       } else {
-        onUpdate(e.editor);
+        onUpdate(e);
         debouncedUpdates(e);
       }
     },

@@ -1,5 +1,6 @@
 import { EditorProps as TipTapEditorProps } from '@tiptap/pm/view';
 import { Editor as EditorClass, Extensions, JSONContent } from '@tiptap/core';
+import { Transaction } from '@tiptap/pm/state';
 
 export interface EditorProps {
   /**
@@ -32,13 +33,19 @@ export interface EditorProps {
    * Defaults to () => {}.
    */
   // eslint-disable-next-line no-unused-vars
-  onUpdate?: (editor?: EditorClass) => void | Promise<void>;
+  onUpdate?: (e: {
+    editor: EditorClass;
+    transaction: Transaction;
+  }) => void | Promise<void>;
   /**
    * A callback function that is called whenever the editor is updated, but only after the defined debounce duration.
    * Defaults to () => {}.
    */
   // eslint-disable-next-line no-unused-vars
-  onDebouncedUpdate?: (editor?: EditorClass) => void | Promise<void>;
+  onDebouncedUpdate?: (e: {
+    editor: EditorClass;
+    transaction: Transaction;
+  }) => void | Promise<void>;
   /**
    * The duration (in milliseconds) to debounce the onDebouncedUpdate callback.
    * Defaults to 750.

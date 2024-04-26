@@ -1,6 +1,6 @@
 {
   "name": "collhub-editor",
-  "version": "0.2.1",
+  "version": "0.2.3",
   "description": "Collhub text editor for CollHub",
   "license": "Apache-2.0",
   "main": "./dist/index.js",
