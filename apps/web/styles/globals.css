@@ -5,14 +5,3 @@
 body {
   background-color: var(--collhub-white);
 }
-
-@layer base {
-  button,
-  [type="button"],
-  [type="reset"],
-  [type="submit"] {
-    -webkit-appearance: initial;
-    background-color: initial;
-    background-image: initial;
-  }
-}

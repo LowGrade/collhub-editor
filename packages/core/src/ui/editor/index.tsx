@@ -14,6 +14,7 @@ import { getPrevText } from '@/lib/editor';
 import { ImageResizer } from './extensions/image-resizer';
 import { CollhubContext } from './provider';
 import { EditorProps } from './editor.types';
+import { cn } from '@/lib/utils';
 
 export default function Editor({
   completionApi = '/api/generate',
@@ -175,7 +176,7 @@ export default function Editor({
         onClick={() => {
           editor?.chain().focus().run();
         }}
-        className={className}
+        className={cn('collhub-editor', className)}
       >
         {editor && <EditorBubbleMenu editor={editor} />}
         {editor?.isActive('image') && <ImageResizer editor={editor} />}
